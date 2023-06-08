@@ -1,0 +1,2 @@
+#!/bin/bash
+group_list = $(groups "$(whoami))
