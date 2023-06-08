@@ -1,2 +1,2 @@
 #!/bin/bash
-if ("guillaume" = "guillaume"){ sudo chown betty hello}
+chown --from=guillaume betty hello
