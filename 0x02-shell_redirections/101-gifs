@@ -1,2 +1,2 @@
 #!/bin/bash
-find "$(pwd)" -type f -iname '*.gif' -printf '%f\n' | rev | cut -f 2- -d '.' | rev | sort -f
+find "$(pwd)" -type f -iname "*.gif" -exec basename {} \; | rev | cut -f 2- -d '.' | rev | sort -f
