@@ -1,2 +1,2 @@
 #!/bin/bash
-find $pwd  -type f -iname '*.gif' -printf '%f\n' | rev | cut -f 2- -d '.' | rev | LC_ALL=C sort -f
+find $(pwd) -type f -name "*.gif" | sort -V | awk -F | awk -F/  '  {  print substr($NF,  1, length($NF) -4)  }  | sort -f
