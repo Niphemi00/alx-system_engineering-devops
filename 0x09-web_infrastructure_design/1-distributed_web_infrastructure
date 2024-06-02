@@ -1,1 +1,14 @@
 https://imgur.com/a/Yq07Rvn
+Additional Elements:
+Load Balancer (HAproxy): Distributes incoming traffic across multiple servers to balance the load and provide redundancy.
+Second Server: Adds redundancy and load distribution.
+Load Balancer Algorithm: Round-robin, which distributes requests evenly across servers.
+Active-Active Setup: Both servers are actively handling requests simultaneously. In contrast, an active-passive setup has one server active and the other as a backup.
+Database Primary-Replica Cluster: The primary (master) database handles writes, and the replica (slave) handles reads to distribute the load.
+Primary vs. Replica:
+Primary (Master): Handles write operations.
+Replica (Slave): Handles read operations and replicates data from the primary.
+Issues:
+SPOF: The load balancer is a single point of failure.
+Security: No firewalls or HTTPS.
+No Monitoring: Lack of visibility into system health.
