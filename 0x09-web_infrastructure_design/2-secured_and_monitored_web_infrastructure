@@ -1,1 +1,13 @@
 https://imgur.com/a/7h0rlPj
+Additional Elements:
+Firewalls: Protect servers from unauthorized access.
+SSL Certificate: Encrypts traffic between the user's browser and the web server.
+Monitoring Clients: Collect and send data about server health and performance to a monitoring service.
+Firewalls: Control inbound and outbound traffic to secure the network.
+HTTPS: Encrypts data to ensure secure communication.
+Monitoring: Tracks system performance and health, and alerts on issues.
+Monitoring Tool: Collects data on metrics like CPU usage, memory, disk usage, and QPS (queries per second).
+Issues:
+SSL Termination at Load Balancer: Can expose unencrypted traffic between the load balancer and web servers.
+Single MySQL Server for Writes: Limits write scalability and introduces a potential bottleneck.
+Identical Components: All servers being the same can make scaling and maintenance more challenging.
