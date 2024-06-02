@@ -1,1 +1,12 @@
 https://imgur.com/a/Yq07Rvn
+Explanation:
+Server: A machine that hosts the web application and its components.
+Domain Name: foobar.com is a human-readable address that points to the server's IP (8.8.8.8).
+DNS Record: The www record in www.foobar.com is a CNAME or A record pointing to the IP address 8.8.8.8.
+Web Server (Nginx): Handles HTTP requests from users, serves static content, and forwards dynamic requests to the application server.
+Application Server: Processes the business logic of the application, executing the code base.
+Database (MySQL): Stores and retrieves data as requested by the application server.
+Issues:
+SPOF (Single Point of Failure): If the server goes down, the website becomes unavailable.
+Downtime during maintenance: Restarting the web server or deploying new code causes downtime.
+Scalability: One server cannot handle a large number of incoming requests.
