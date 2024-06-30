@@ -1,9 +1,26 @@
 #!/usr/bin/env bash
-# set up your client SSH configuration file so that you can
-# connect to a server without typing a password
+# Using puppet to connect without password
 
-exec { 'echo':
-  path    => 'usr/bin:/bin',
-  command => 'echo "    IdentityFile ~/.ssh/school\n    PasswordAuthentication no" >> /etc/ssh/ssh_config',
-  returns => [0,1],
+# define the type of file
+file { '/etc/ssh/ssh_config':
+  # ensure the file exists before anything further
+  ensure => present,
+}
+
+file_line { 'Turn off passwd auth':
+  # specifies the path to the file being modified.
+  path    => '/etc/ssh/ssh_config',
+  # defines the line to be modified
+  line    => 'PasswordAuthentication no',
+  # specifies a regular expression to match the existing line before modifying it.
+  match   => '^#PasswordAuthentication',
+}
+
+file_line { 'Declare identity file':
+  # # specifies the path to the file being modified.
+  path    => '/etc/ssh/ssh_config',
+  # defines the line to be modified
+  line    => 'IdentityFile ~/.ssh/school',
+  # specifies a regular expression to match the existing line before modifying it.
+  match   => '^#IdentityFile',
 }
